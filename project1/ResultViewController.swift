@@ -8,11 +8,19 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
 
+class ResultViewController: UIViewController {
+    var actualResult: String?
+    
     @IBOutlet weak var lblMainResult: UILabel!
     
     override func viewDidLoad() {
+        if let e = actualResult{
+          
+            print(e)
+            self.lblMainResult.text = "Result is: \(e)"
+            
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

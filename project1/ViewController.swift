@@ -21,12 +21,35 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func btnAdd(_ sender: Any) {
+        
+        
+        let num1 = Float(self.firstNumberText.text!)
+        let num2 = Float(self.secondNumberText.text!)
+        self.lblResult.text = String(num1! + num2!)
+        print(lblResult)
+                let SB = UIStoryboard(name: "Main", bundle: nil)
+                let result = SB.instantiateViewController(withIdentifier: "MainResultScreen") as! ResultViewController
+                result.actualResult = self.lblResult.text
+                // result.lblMainResult.text = self.lblResult.text
+                self.navigationController?.pushViewController(result, animated: true)
+        
+
+    }
+    
     @IBAction func btnMultiplication(_ sender: UIButton) {
 //        var a:Float
 //        var b:Float
 let num1 = Float(self.firstNumberText.text!)
 let num2 = Float(self.secondNumberText.text!)
         self.lblResult.text = String(num1! * num2!)
+        print(lblResult)
+        let SB = UIStoryboard(name: "Main", bundle: nil)
+        let result = SB.instantiateViewController(withIdentifier: "MainResultScreen") as! ResultViewController
+        result.actualResult = self.lblResult.text
+        self.navigationController?.pushViewController(result, animated: true)
         
     }
     
@@ -35,23 +58,25 @@ let num2 = Float(self.secondNumberText.text!)
         let num1 = Float(self.firstNumberText.text!)
         let num2 = Float(self.secondNumberText.text!)
         self.lblResult.text = String(num1! / num2!)
+        print(lblResult)
+        let SB = UIStoryboard(name: "Main", bundle: nil)
+        let result = SB.instantiateViewController(withIdentifier: "MainResultScreen") as! ResultViewController
+        result.actualResult = self.lblResult.text
+        self.navigationController?.pushViewController(result, animated: true)
+        
     }
     
-    @IBAction func btnAddition(_ sender: UIButton) {
-        let num1 = Float(self.firstNumberText.text!)
-        let num2 = Float(self.secondNumberText.text!)
-        self.lblResult.text = String(num1! + num2!)
-        
-        let SB = UIStoryboard(name: "Main", bundle: nil)
-        let result = SB.instantiateViewController(withIdentifier: "Result")as! ResultViewController
-        result.lblMainResult.text = self.lblResult.text
-        self.navigationController?.pushViewController(result, animated: true)
-    }
+    
     
     @IBAction func btnSubtraction(_ sender: UIButton) {
         let num1 = Float(self.firstNumberText.text!)
         let num2 = Float(self.secondNumberText.text!)
         self.lblResult.text = String(num1! - num2!)
+        print(lblResult)
+        let SB = UIStoryboard(name: "Main", bundle: nil)
+        let result = SB.instantiateViewController(withIdentifier: "MainResultScreen") as! ResultViewController
+        result.actualResult = self.lblResult.text
+        self.navigationController?.pushViewController(result, animated: true)
     
     }
     
